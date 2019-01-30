@@ -1,0 +1,43 @@
+{
+    "name": "malven/craft-imgix",
+    "description": "Tools for working with the Imgix image-generation service in Craft",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "imgix"
+    ],
+    "support": {
+        "docs": "https://github.com/cmalven/craft-imgix/blob/master/README.md",
+        "issues": "https://github.com/cmalven/craft-imgix/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Malven",
+            "homepage": "https://malven.co"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "malven\\imgix\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Imgix",
+        "handle": "imgix",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/cmalven/craft-imgix/master/CHANGELOG.md",
+        "components": {
+            "imgixService": "malven\\imgix\\services\\ImgixService"
+        },
+        "class": "malven\\imgix\\Imgix"
+    }
+}

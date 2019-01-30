@@ -1,0 +1,45 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Imgix plugin for Craft CMS 3.x
+ *
+ * Imgix Settings.twig
+ *
+ * @author    Chris Malven
+ * @copyright Copyright (c) 2019 Chris Malven
+ * @link      https://malven.co
+ * @package   Imgix
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("malven\\imgix\\assetbundles\\imgix\\ImgixAsset") %}
+
+{{ forms.textField({
+    label: 'Imgix API Key',
+    instructions: 'Your Imgix API key.',
+    id: 'imgixApiKey',
+    name: 'imgixApiKey',
+    required: true,
+    value: settings['imgixApiKey']})
+}}
+
+{{ forms.textField({
+    label: 'Imgix Source Domain',
+    instructions: 'The domain for your Imgix source.',
+    id: 'sourceDomain',
+    name: 'sourceDomain',
+    placeholder: 'custom.imgix.net',
+    required: true,
+    value: settings['sourceDomain']})
+}}
+
+{{ forms.textField({
+    label: 'Imgix Security Token',
+    instructions: 'If you have `Secure URL` enabled for your Imgix source, this should be the `Security Token` value listed there.',
+    id: 'securityToken',
+    name: 'securityToken',
+    value: settings['securityToken']})
+}}
